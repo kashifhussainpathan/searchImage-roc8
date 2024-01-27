@@ -10,7 +10,6 @@ const SignIn = () => {
     password: "",
   });
 
-  const [error, setError] = useState<string>("");
   const [isRegistering, setIsRegistering] = useState<boolean>(false);
 
   const logIn = async (email: string, password: string) => {
@@ -21,7 +20,6 @@ const SignIn = () => {
         password,
       });
 
-      setError(error?.message);
       console.log({ data, error });
     } catch (error) {
       console.log(error);
@@ -60,8 +58,6 @@ const SignIn = () => {
         >
           {isRegistering ? "Loging in.." : "Login"}
         </Button>
-
-        {error && <p className=" text-red-500 text-center w-full">{error}</p>}
       </form>
     </div>
   );

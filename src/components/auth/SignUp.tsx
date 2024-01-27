@@ -17,7 +17,6 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const [error, setError] = useState<string>("");
   const [isSigningUp, setIsSigningUp] = useState<boolean>(false);
 
   const signUp = async () => {
@@ -30,7 +29,6 @@ const SignUp = () => {
         password,
       });
 
-      setError(error?.message);
       console.log({ data, error });
     } catch (error) {
       console.log(error);
@@ -80,8 +78,6 @@ const SignUp = () => {
         >
           {isSigningUp ? "Creating.." : "Create Account"}
         </Button>
-
-        {error && <p className="text-red-500 text-center w-full">{error}</p>}
       </form>
     </div>
   );
